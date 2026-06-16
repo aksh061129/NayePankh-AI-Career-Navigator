@@ -1,6 +1,4 @@
 import Navbar from "../components/Navbar";
-import { useState, useEffect } from "react";
-import API from "../services/api";
 
 import {
   PieChart,
@@ -17,94 +15,25 @@ const COLORS = [
   "#8b5cf6",
   "#f59e0b",
   "#ef4444",
-  "#06b6d4",
-  "#22c55e",
+];
+
+const chartData = [
+  { name: "Artificial Intelligence", value: 6 },
+  { name: "Web Development", value: 5 },
+  { name: "Python Development", value: 4 },
+  { name: "Data Analytics", value: 3 },
+  { name: "Java Development", value: 2 },
 ];
 
 function Dashboard() {
-  const [students, setStudents] = useState([]);
-  const [chartData, setChartData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const totalStudents = 20;
+  const internshipMatches = 9;
+  const roadmapsGenerated = 15;
+  const volunteers = 8;
 
-  useEffect(() => {
-    API.get("/students")
-      .then((res) => {
-        const studentData = res.data;
-
-        setStudents(studentData);
-
-        const domainCounts = {};
-
-        studentData.forEach((student) => {
-          const domain = student.InterestDomain;
-
-          domainCounts[domain] =
-            (domainCounts[domain] || 0) + 1;
-        });
-
-        const formattedData = Object.keys(domainCounts).map(
-          (domain) => ({
-            name: domain,
-            value: domainCounts[domain],
-          })
-        );
-
-        setChartData(formattedData);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
-  }, []);
-
-  const totalStudents = students.length;
-
-  const internshipMatches = students.filter(
-    (student) => student.InternshipMatched === "Yes"
-  ).length;
-
-  const roadmapsGenerated = students.filter(
-    (student) => student.RoadmapGenerated === "Yes"
-  ).length;
-
-  const volunteers = students.filter(
-    (student) => student.VolunteerApplied === "Yes"
-  ).length;
-
-  const roadmapPercentage =
-    totalStudents > 0
-      ? Math.round(
-          (roadmapsGenerated / totalStudents) * 100
-        )
-      : 0;
-
-  const internshipPercentage =
-    totalStudents > 0
-      ? Math.round(
-          (internshipMatches / totalStudents) * 100
-        )
-      : 0;
-
-  const volunteerPercentage =
-    totalStudents > 0
-      ? Math.round(
-          (volunteers / totalStudents) * 100
-        )
-      : 0;
-
-  if (loading) {
-    return (
-      <>
-        <Navbar />
-        <div className="min-h-screen flex items-center justify-center">
-          <h2 className="text-2xl font-semibold">
-            Loading Dashboard...
-          </h2>
-        </div>
-      </>
-    );
-  }
+  const roadmapPercentage = 75;
+  const internshipPercentage = 45;
+  const volunteerPercentage = 40;
 
   return (
     <>
@@ -121,7 +50,7 @@ function Dashboard() {
             </h1>
 
             <p className="text-slate-500 mt-2">
-              Real-time insights from student career data
+              Career insights and student engagement overview
             </p>
           </div>
 
@@ -183,10 +112,7 @@ function Dashboard() {
               Domain-wise distribution of students
             </p>
 
-            <ResponsiveContainer
-              width="100%"
-              height={400}
-            >
+            <ResponsiveContainer width="100%" height={400}>
               <PieChart>
 
                 <Pie
@@ -200,9 +126,7 @@ function Dashboard() {
                   {chartData.map((entry, index) => (
                     <Cell
                       key={index}
-                      fill={
-                        COLORS[index % COLORS.length]
-                      }
+                      fill={COLORS[index % COLORS.length]}
                     />
                   ))}
                 </Pie>
@@ -234,9 +158,7 @@ function Dashboard() {
                 <div className="w-full bg-slate-200 rounded-full h-3">
                   <div
                     className="bg-blue-600 h-3 rounded-full"
-                    style={{
-                      width: `${roadmapPercentage}%`,
-                    }}
+                    style={{ width: `${roadmapPercentage}%` }}
                   />
                 </div>
               </div>
@@ -250,9 +172,7 @@ function Dashboard() {
                 <div className="w-full bg-slate-200 rounded-full h-3">
                   <div
                     className="bg-green-500 h-3 rounded-full"
-                    style={{
-                      width: `${internshipPercentage}%`,
-                    }}
+                    style={{ width: `${internshipPercentage}%` }}
                   />
                 </div>
               </div>
@@ -266,9 +186,7 @@ function Dashboard() {
                 <div className="w-full bg-slate-200 rounded-full h-3">
                   <div
                     className="bg-orange-500 h-3 rounded-full"
-                    style={{
-                      width: `${volunteerPercentage}%`,
-                    }}
+                    style={{ width: `${volunteerPercentage}%` }}
                   />
                 </div>
               </div>
@@ -288,15 +206,15 @@ function Dashboard() {
             <div className="space-y-4">
 
               <div className="border-b pb-3">
-                🎯 Students explored internship recommendations
+                🎯 9 students matched with internships
               </div>
 
               <div className="border-b pb-3">
-                📚 Personalized roadmaps generated
+                📚 15 personalized roadmaps generated
               </div>
 
               <div className="border-b pb-3">
-                🤝 Volunteer opportunities applied
+                🤝 8 volunteer applications submitted
               </div>
 
               <div>
@@ -308,12 +226,14 @@ function Dashboard() {
           </div>
 
         </div>
+
         <footer className="bg-white border-t mt-20">
-  <div className="max-w-7xl mx-auto px-6 py-6 text-center text-slate-500">
-    © 2026 NayePankh Career Navigator |
-    Empowering Students Through Career Intelligence
-  </div>
-</footer>
+          <div className="max-w-7xl mx-auto px-6 py-6 text-center text-slate-500">
+            © 2026 NayePankh Career Navigator |
+            Empowering Students Through Career Intelligence
+          </div>
+        </footer>
+
       </div>
     </>
   );
