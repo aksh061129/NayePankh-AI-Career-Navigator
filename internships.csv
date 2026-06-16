@@ -1,0 +1,31 @@
+InternshipID,Domain,Role,Company,Mode,Duration,SkillsRequired
+
+1,Web Development,Frontend Developer Intern,TCS,Remote,3 Months,HTML CSS JavaScript
+
+2,Web Development,React Developer Intern,Infosys,Hybrid,4 Months,React Tailwind
+
+3,Artificial Intelligence,AI Intern,Wipro,Remote,4 Months,Python Machine Learning
+
+4,Artificial Intelligence,AI Research Intern,Infosys,Hybrid,6 Months,Python Deep Learning
+
+5,Data Analytics,Data Analyst Intern,Accenture,Hybrid,3 Months,Excel SQL Power BI
+
+6,Data Analytics,Business Analyst Intern,Deloitte,Remote,4 Months,SQL Excel Dashboarding
+
+7,Python Development,Python Developer Intern,HCL,Remote,2 Months,Python Git
+
+8,Python Development,Backend Intern,Tech Mahindra,Hybrid,3 Months,Python Flask API
+
+9,Machine Learning,ML Intern,Cognizant,Remote,4 Months,Python ML Scikit-Learn
+
+10,Machine Learning,Data Science Intern,Capgemini,Hybrid,5 Months,Python Pandas ML
+
+11,Full Stack Development,Full Stack Intern,Accenture,Hybrid,4 Months,React NodeJS
+
+12,Full Stack Development,MERN Stack Intern,TCS,Remote,6 Months,MongoDB Express React Node
+
+13,UI/UX Design,UI Designer Intern,Zoho,Remote,3 Months,Figma Prototyping
+
+14,UI/UX Design,Product Design Intern,Freshworks,Hybrid,4 Months,Figma UX Research
+
+15,Web Development,Frontend Intern,HCL,Remote,3 Months,HTML CSS React

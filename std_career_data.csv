@@ -1,0 +1,21 @@
+StudentID,Name,Year,Branch,InterestDomain,SkillLevel,RoadmapGenerated,InternshipMatched,VolunteerApplied
+1,Rahul Sharma,2,CSE,Web Development,Intermediate,Yes,Yes,No
+2,Priya Patel,3,IT,Artificial Intelligence,Advanced,Yes,Yes,Yes
+3,Aman Verma,1,CSE,Data Analytics,Beginner,Yes,No,No
+4,Sneha Gupta,2,ECE,Python Development,Intermediate,No,No,Yes
+5,Rohit Singh,3,CSE,Full Stack Development,Advanced,Yes,Yes,No
+6,Ananya Joshi,2,IT,Machine Learning,Intermediate,Yes,No,Yes
+7,Harsh Jain,1,CSE,Web Development,Beginner,No,No,No
+8,Kavya Shah,3,CSE,UI/UX Design,Advanced,Yes,Yes,No
+9,Yash Patil,2,ECE,Data Analytics,Intermediate,Yes,No,No
+10,Neha Kapoor,3,IT,Artificial Intelligence,Advanced,Yes,Yes,Yes
+11,Aditya Mehta,2,CSE,Python Development,Intermediate,Yes,No,No
+12,Simran Kaur,1,CSE,Web Development,Beginner,No,No,Yes
+13,Arjun Rao,3,IT,Machine Learning,Advanced,Yes,Yes,No
+14,Pooja Deshmukh,2,CSE,Full Stack Development,Intermediate,Yes,No,Yes
+15,Vivek Mishra,1,ECE,Data Analytics,Beginner,No,No,No
+16,Riya Kulkarni,2,CSE,Web Development,Intermediate,Yes,Yes,No
+17,Sahil Gupta,3,IT,Artificial Intelligence,Advanced,Yes,Yes,Yes
+18,Megha Patil,2,CSE,UI/UX Design,Intermediate,Yes,No,No
+19,Ayush Jain,1,CSE,Python Development,Beginner,No,No,Yes
+20,Shreya Verma,3,CSE,Machine Learning,Advanced,Yes,Yes,No
