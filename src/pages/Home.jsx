@@ -1,26 +1,31 @@
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import API from "../services/api";
+// import { useEffect, useState } from "react";
+// import API from "../services/api";
 
 function Home() {
-  const [stats, setStats] = useState({
-    students: 0,
-    internships: 0,
-    roadmaps: 0,
-    volunteers: 0,
-  });
+  // const [stats, setStats] = useState({
+  //   students: 20,
+  //   internships: 0,
+  //   roadmaps: 0,
+  //   volunteers: 0,
+  // });
 
-  useEffect(() => {
-    API.get("/stats")
-      .then((res) => {
-        setStats(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+  // useEffect(() => {
+  //   API.get("/stats")
+  //     .then((res) => {
+  //       setStats(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+const stats = {
+  students: 20,
+  internships: 9,
+  roadmaps: 15,
+  volunteers: 8,
+};
   return (
     <>
       <Navbar />
